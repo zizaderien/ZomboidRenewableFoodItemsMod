@@ -1,0 +1,233 @@
+module ANL{
+
+  imports {
+    Base, farming
+  }
+  
+  /*---- Salt Renew Items ----*/
+  item SmallSaltRock {
+    Type=Normal,
+    DisplayName=Small Salt Rock,
+    Icon=SmallSaltRock,
+    Weight=0.1,  
+  }
+  
+  /*---- Salt Renew Recipes ----*/
+  recipe Crush Small Salt Rocks {
+	SmallSaltRock=6,
+	keep MortarPestle,
+    Result:Salt,
+    OnGiveXP:Recipe.OnGiveXP.Cooking10,
+    Time:500,
+	
+  }
+  
+  /*---- Yeast Renew Items ----*/
+  
+  item WildYeastBase {
+    HungerChange	=	-2,
+	ThirstChange	=	+7,
+	Type=Food,
+	FoodType    =   Vegetables,
+    DisplayName=Wild Yeast Base,
+    Icon=WildYeastBase,
+	Carbohydrates = 2.5,
+    Proteins = 0,
+    Lipids = 0,
+    Calories = 7,
+    Weight=0.1,  
+
+  }
+  item JarOfYeast {
+	Type	=	Normal,
+	DisplayName	=	Jar of Yeast,
+	Icon	=	JarOfYeast,
+	Weight	=	0.5,
+	Wet		=	TRUE,
+    WetCooldown	=	900000,
+    ItemWhenDry	=	ANL.DryJarOfYeast,
+  }
+  item DryJarOfYeast {
+	Type=Normal,
+	DisplayName=Jar of Ready Yeast,
+	Icon=JarOfYeastReady,
+	Weight=0.5,
+  }
+  item AnlRenewMag1 {
+    Weight	=	0.1,
+    Type	=	Literature,
+    DisplayName	=	All About Yeast,
+    Icon	=	MagazineFood,
+    TeachedRecipes  =   Grind Mushrooms To Yeast Base;Make Yeast,
+    ReplaceOnUse    =   AnlRenewMag1,
+    StaticModel = Magazine,
+  }
+  
+  /*---- Yeast Renew Recipes ----*/
+  
+  recipe Grind Mushrooms To Yeast Base {
+	MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,
+	/*MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,
+	MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,
+	MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,
+	MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,*/
+	keep MortarPestle,
+    Result:WildYeastBase,
+    Time:500,
+    Category:Cooking,
+	NeedToBeLearn:true,
+	OnGiveXP:Recipe.OnGiveXP.Cooking1,
+	
+  }
+  
+  recipe Make Yeast {
+	WildYeastBase=1,
+	Water = 2,
+	EmptyJar = 1,
+	JarLid = 1,
+    Result:JarOfYeast,
+    Time:500,
+    Category:Cooking,
+	NeedToBeLearn:true,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
+  }
+  
+  recipe Open Yeast Jar {
+	DryJarOfYeast = 1,
+    Result:Yeast,
+	OnCreate: Recipe.OnCreate.OpenYeastJar,
+    Time:100,
+    Category:Cooking,
+	OnGiveXP:Recipe.OnGiveXP.Cooking5,
+	
+  }
+  
+  /*---- Sugar Renew Items ----*/
+  
+  item SugarBeet
+	{
+	    DisplayCategory = Food,
+		Type				=		Food,
+		DisplayName			=		Sugar Beet,
+		Icon				=		SugarBeet,
+		Weight				=		0.1,
+		HungerChange 		=		-5,
+		DaysFresh 			=		3,
+		DaysTotallyRotten 	=	 	7,
+		ThirstChange	=	+5,
+		FoodType    =   Vegetables,
+        Carbohydrates = 0.15,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1,
+		EvolvedRecipe       =       Salad:4;FruitSalad:4;Pancakes:4,
+	}
+	
+	item SugarBeetSeed
+	{
+	    DisplayCategory = Gardening,
+		Type				=		Normal,
+		DisplayName			=		Sugar Beet Seeds,
+		Icon				=		TZ_LRRadishSeeds,
+		Weight				=		0.009,
+		SurvivalGear = TRUE,
+	}
+	
+	item SugarBeetBagSeed
+	{
+	    DisplayCategory = Gardening,
+		Type				=		Normal,
+		DisplayName			=		Sugar Beet Seeds Packet,
+		Icon				=		TZ_SeedpackLRRadish,
+		Weight				=		0.1,
+		SurvivalGear = TRUE,
+	}
+	
+	item SlicedSugarBeets
+	{
+	    DisplayCategory = Cooking,
+		Type				=		Food,
+		DisplayName			=		Sliced Sugar Beets,
+		Icon				=		SlicedSugarBeets,
+		Weight				=		0.5,
+		HungerChange 		=		-15,
+		DaysFresh 			=		3,
+		DaysTotallyRotten 	=	 	7,
+		ThirstChange	=	+10,
+		FoodType    =   Vegetables,
+        Carbohydrates = 0.15,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 15,
+		IsCookable	=	TRUE,
+		MinutesToCook	=	50,
+		ReplaceOnCooked = ANL.DriedSugarBeets,
+		EvolvedRecipe       =       Salad:15;FruitSalad:15;Pancakes:15,
+	}
+	
+	item DriedSugarBeets{
+		DisplayCategory = Cooking,
+		DisplayName			=		Dried Sugar Beets,
+		Icon				=		DriedSugarBeets,
+		Weight				=		0.2,
+		HungerChange 		=		-2,
+		ThirstChange	=	+10,
+		Carbohydrates = 0.01,
+        Proteins = 0,
+        Lipids = 0,
+        Calories = 1,
+	}
+	
+	item AnlRenewMag2 {
+		Weight	=	0.1,
+		Type	=	Literature,
+		DisplayName	=	Handmade Sugar,
+		Icon	=	MagazineFood,
+		TeachedRecipes  =   Make Sugar,
+		ReplaceOnUse    =   AnlRenewMag2,
+		StaticModel = Magazine,
+	}
+	
+	/*---- Sugar Renew Recipes ----*/
+	
+	recipe Open Packet of Sugar Beet Seeds
+	{
+        SugarBeetBagSeed,
+
+        Result:SugarBeetSeed=50,
+        Time:20.0,
+        Category:Farming,
+        Sound:OpenSeedPacket,
+	}
+	
+	recipe Put Sugar Beet Seeds in Packet
+    {
+        SugarBeetSeed=50,
+
+        Result:SugarBeetBagSeed,
+        Time:10.0,
+        Category:Farming,
+    }
+	
+	recipe Slice Sugar Beets
+    {
+        SugarBeet=10,
+		keep HuntingKnife/KitchenKnife/Saw/Axe/HandAxe/AxeStone/WoodAxe/MeatCleaver/FlintKnife/Machete,
+        Result:SlicedSugarBeets,
+        Time:70.0,
+        Category:Cooking,
+		OnGiveXP:Recipe.OnGiveXP.Cooking1,
+    }
+	
+	recipe Make Sugar 
+	{
+		DriedSugarBeets,
+		keep MortarPestle,
+		Result:Sugar,
+		Time:500,
+		Category:Cooking,
+		NeedToBeLearn:true,
+		OnGiveXP:Recipe.OnGiveXP.Cooking5,
+    }
+	
+}

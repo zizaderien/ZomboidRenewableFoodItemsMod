@@ -1,0 +1,12 @@
+Recipe_RU = {
+  Recipe_Crush_Small_Salt_Rocks = "Измельчить соляную гальку",
+  
+  Recipe_Grind_Mushrooms_To_Yeast_Base = "Измельчить грибы в дрожжевую основу",
+  Recipe_Make_Yeast = "Сделать дрожжи",
+  Recipe_Open_Yeast Jar = "Открыть банку дрожжей",
+  
+  Recipe_Open_Packet_of_Sugar_Beet_Seeds = "Вынуть семена сахарной свеклы",
+  Recipe_Put_Sugar_Beet_Seeds_in_Packet = "Сложить семена сахарной свеклы",
+  Recipe_Slice_Sugar_Beets = "Нарезать сахарную свеклу",
+  Recipe_Make_Sugar = "Сделать сахар",
+}

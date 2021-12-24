@@ -1,0 +1,16 @@
+Items_RU = {
+  DisplayName_Small_Salt_Rock = "Соляная галька",
+
+  DisplayName_Wild_Yeast_Base = "Дикая дрожжевая основа",
+  DisplayName_Jar_of_Yeast = "Банка дрожжевой смеси",
+  DisplayName_Jar_of_Ready_Yeast = "Банка готовых дрожжей",
+  DisplayName_All_About_Yeast = "Журнал «Дрожжевой ренессанс»",
+  
+  DisplayName_Sugar_Beet = "Сахарная свекла",
+  DisplayName_Sugar_Beet_Seeds = "Семена сахарной свеклы",
+  DisplayName_Sugar_Beet_Seeds_Packet = "Пачка семян сахарной свеклы",
+  DisplayName_Sliced_Sugar_Beets = "Измельченная сахарная свекла",
+  DisplayName_Dried_Sugar_Beets = "Высушенная сахарная свекла",
+  DisplayName_Handmade_Sugar = "Журнал «Домашний сахар - сделай сам»",
+
+}
