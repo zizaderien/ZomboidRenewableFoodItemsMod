@@ -81,7 +81,7 @@ module ANL{
   }
   
   recipe Make Yeast {
-	WildYeastBase=1,
+	WildYeastBase=5,
 	Water = 2,
 	EmptyJar = 1,
 	JarLid = 1,
