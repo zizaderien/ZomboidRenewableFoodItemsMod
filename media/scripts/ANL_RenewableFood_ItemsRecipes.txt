@@ -67,16 +67,12 @@ module ANL{
   
   recipe Grind Mushrooms To Yeast Base {
 	MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,
-	/*MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,
-	MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,
-	MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,
-	MushroomGeneric1/MushroomGeneric2/MushroomGeneric3/MushroomGeneric4/MushroomGeneric5/MushroomGeneric6/MushroomGeneric7,*/
 	keep MortarPestle,
     Result:WildYeastBase,
-    Time:500,
+    Time:200,
     Category:Cooking,
 	NeedToBeLearn:true,
-	OnGiveXP:Recipe.OnGiveXP.Cooking1,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 	
   }
   
@@ -89,7 +85,7 @@ module ANL{
     Time:500,
     Category:Cooking,
 	NeedToBeLearn:true,
-	OnGiveXP:Recipe.OnGiveXP.Cooking3,
+	OnGiveXP:Recipe.OnGiveXP.Cooking10,
   }
   
   recipe Open Yeast Jar {
@@ -98,7 +94,7 @@ module ANL{
 	OnCreate: Recipe.OnCreate.OpenYeastJar,
     Time:100,
     Category:Cooking,
-	OnGiveXP:Recipe.OnGiveXP.Cooking5,
+	OnGiveXP:Recipe.OnGiveXP.Cooking3,
 	
   }
   
@@ -216,7 +212,7 @@ module ANL{
         Result:SlicedSugarBeets,
         Time:70.0,
         Category:Cooking,
-		OnGiveXP:Recipe.OnGiveXP.Cooking1,
+		OnGiveXP:Recipe.OnGiveXP.Cooking3,
     }
 	
 	recipe Make Sugar 
@@ -227,7 +223,7 @@ module ANL{
 		Time:500,
 		Category:Cooking,
 		NeedToBeLearn:true,
-		OnGiveXP:Recipe.OnGiveXP.Cooking5,
+		OnGiveXP:Recipe.OnGiveXP.Cooking10,
     }
 	
 }
