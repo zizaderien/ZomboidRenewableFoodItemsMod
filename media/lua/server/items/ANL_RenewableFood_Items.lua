@@ -32,8 +32,22 @@ registerAsLoot("ANL.SugarBeetBagSeed", 4, "GigamartFarming");
 registerAsLoot("ANL.SugarBeetBagSeed", 3, "ToolStoreFarming");
 
 -- Yeast jar return
-function Recipe.OnCreate.OpenYeastJar (items, result, player)	
-  local inv = player:getInventory();	
-  inv:AddItem("Base.EmptyJar");	
-  inv:AddItem("Base.JarLid");	
-end 
+function Recipe.OnCreate.ANLOpenJar (items, result, player)
+  local inv = player:getInventory();
+  inv:AddItem("Base.EmptyJar");
+  inv:AddItem("Base.JarLid");
+end
+
+function Recipe.OnCreate.ANLOpenLid (items, result, player)
+  local inv = player:getInventory();
+  inv:AddItem("Base.JarLid");
+end
+
+function Recipe.OnCreate.ANLReturnJar (items, result, player)
+  local inv = player:getInventory();
+  inv:AddItem("Base.EmptyJar");
+end
+
+function Recipe.OnCreate.StartFermentation (items, result, player)
+  ANL_BeginFermentation(result)
+end

@@ -1,10 +1,9 @@
 local fermentationTable = {}
 
-function ANL_BeginFermentation(item, resultName)
+function ANL_BeginFermentation(item)
     local modData = item:getModData();
     modData.isFermentable = 1;
     modData.fermentation = 0;
-    modData.onFermentedItem = resultName;
     table.insert(fermentationTable, item);
 end
 
@@ -16,18 +15,23 @@ function ANL_EndFermentation(item, successful)
             if successful then
                 local container = item:getContainer();
                 local newItemName = modData.onFermentedItem;
-                print("Name ", newItemName)
                 if not string.find(newItemName, "%.") then
-                    print("Dot not found")
                     newItemName = item:getModule() .. "." .. newItemName;
                 end
-                print("Final name", newItemName)
                 container:AddItem(newItemName);
+
+                if(modData.onFermentedItem2) then
+                    newItemName = modData.onFermentedItem2;
+                    if not string.find(newItemName, "%.") then
+                        newItemName = item:getModule() .. "." .. newItemName;
+                    end
+                    container:AddItem(newItemName);
+                end
+
                 container:DoRemoveItem(item);
                 --item:setContainer(nil);
             end
             modData.isFermentable = 0;
-            modData.onFermentedItem = nil;
             fermentationTable[k] = nil
         end
     end
@@ -37,9 +41,8 @@ Events.EveryHours.Add(function()
 
     for k,v in pairs(fermentationTable) do
         local modData = v:getModData();
-        modData.fermentation = modData.fermentation + 0.0002f;
-        print("Age", v:getAge())
-        if modData.fermentation > 0.97f then
+        modData.fermentation = modData.fermentation + 1/(modData.daysToFerment*24);
+        if modData.fermentation > 0.99f then
             ANL_EndFermentation(v, true);
         end
     end

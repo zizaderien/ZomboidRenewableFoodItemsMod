@@ -5,9 +5,9 @@ Events.onAddForageDefs.Add(function()
 local SmallSaltRock = {
 	type="ANL.SmallSaltRock",
 	minCount=1,
-	maxCount=3,
+	maxCount=2,
 	xp=15,
-	skill=2,
+	skill=3,
 	categories = { "Stones" },
 	zones={ Forest=25, DeepForest=25, FarmLand=20, Farm=15, Vegitation=30 },
 	spawnFuncs = { doWildFoodSpawn }
