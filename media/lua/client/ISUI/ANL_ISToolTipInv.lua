@@ -1,25 +1,24 @@
 local stock_ISTolTipInv_render = ISToolTipInv.render;
 
-local function drawFermentationTooltip(tooltip, fermentation)
+local function drawFermentationTooltip(tooltip, modData)
     local layout = tooltip:beginLayout();
     local fermentationBar = layout:addItem();
     fermentationBar:setLabel(Translator.getText("Tooltip_ANL_fermentation"), 1.0f, 1.0f, 0.8f, 1.0f);
-    fermentationBar:setProgress(fermentation, 0.0f, 0.6f, 0.0f, 0.7f)
+    fermentationBar:setProgress((getGameTime():getWorldAgeHours() - modData.fermentationStart) / (modData.daysToFerment * 24), 0.0f, 0.6f, 0.0f, 0.7f)
     local render = layout:render(5, 5 + 2*(tooltip:getLineSpacing() + 5), tooltip);
     tooltip:endLayout(layout);
     tooltip:setHeight(render + 5);
 end
-
+-- FIXME: Вес общий вес съезжает tooltip
 function ISToolTipInv:render()
-    if not self.item:hasModData() then
+    if not ANL_isFermentable(self.item) then
         return stock_ISTolTipInv_render(self);
     end
 
     local modData = self.item:getModData();
-    if not modData.isFermentable then
-        return stock_ISTolTipInv_render(self);
+    if not modData.fermentationStart then
+        ANL_ReloadFermentation(self.item) -- Fix if item spawned by console/debug
     end
-
     -- Tooltip for fermentable item
     if ISContextMenu.instance and ISContextMenu.instance.visibleCheck then return end
     local mx = getMouseX() + 24;
@@ -39,7 +38,7 @@ function ISToolTipInv:render()
     self.tooltip:setWidth(50)
     self.tooltip:setMeasureOnly(true)
     self.item:DoTooltip(self.tooltip);
-    drawFermentationTooltip(self.tooltip, modData.fermentation)
+    drawFermentationTooltip(self.tooltip, modData)
     self.tooltip:setMeasureOnly(false)
 
     local myCore = getCore();
@@ -69,8 +68,5 @@ function ISToolTipInv:render()
     self:drawRectBorder(0, 0, self.width, self.height, self.borderColor.a, self.borderColor.r, self.borderColor.g, self.borderColor.b);
     self.item:DoTooltip(self.tooltip);
 
-    drawFermentationTooltip(self.tooltip, modData.fermentation)
+    drawFermentationTooltip(self.tooltip, modData)
 end
-
-
-    --local modData = item:getModData();

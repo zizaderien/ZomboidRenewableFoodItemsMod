@@ -333,9 +333,10 @@ module ANL{
       DisplayName	=	Jar Of Vinegar Base,
       Icon	=	JarOfVinegarBase,
       Weight	=	0.5,
+      Tags = Fermentable,
       onFermentedItem= Base.Vinegar,
       onFermentedItem2= EmptyJar,
-      daysToFerment=10,
+      daysToFerment=0.5,
     }
 
     /*---- Vinegar renew recipes ----*/
