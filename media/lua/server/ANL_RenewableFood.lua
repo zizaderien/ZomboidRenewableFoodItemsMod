@@ -1,4 +1,4 @@
-local fermentationTable = {};
+fermentationTable = {};
 
 local function loadItemIfFermentable(item)
     -- Check is fermentable
@@ -62,8 +62,8 @@ function ANL_EndFermentation(item, successful)
                 if modData.onFermentedItem2 then
                     container:AddItem(newItemName2);
                 end
+                container:DoRemoveItem(item);
             end
-            container:DoRemoveItem(item);
         end
         fermentationTable[item_id] = nil
     end
@@ -98,11 +98,63 @@ anl_total5 = 0
 anl_cars = {}
 anl_cars_len = 0
 
+Events.OnSave.Add(function()
+    if ModData.exists("FermentationSaveData") then
+        ModData.remove("FermentationSaveData")
+    end
+    local saveData = ModData.create("FermentationSaveData")
+    for id, item in pairs(fermentationTable) do
+        if item:getContainer() ~= nil then
+            local container = item:getContainer()
+
+            while container:getContainingItem() and container:getContainingItem():getContainer() do
+                container = container:getContainingItem():getContainer()
+            end
+            local valid = true
+
+            local invInfo = {}
+            if container:getType() == "floor" then
+                local outerItem = item
+                while not outerItem:getWorldItem() do
+                    outerItem = outerItem:getContainer():getContainingItem();
+                end
+                local square = outerItem:getWorldItem():getSquare();
+                invInfo["type"] = "WorldItem"
+                invInfo["X"] = square:getX()
+                invInfo["Y"] = square:getY()
+                invInfo["Z"] = square:getZ()
+            elseif container:getParent() and instanceof(container:getParent(), "BaseVehicle") then
+                invInfo["type"] = "Vehicle"
+                invInfo["id"] = container:getParent():getId();
+            elseif container:getParent() and container:getParent():getSquare() then
+                if instanceof(container:getParent(), "IsoPlayer") then
+                    valid = false
+                elseif container:getParent():getSquare():getStaticMovingObjects():indexOf(container:getParent()) ~= -1 then
+                    invInfo["type"] = "StaticMovingObject"
+                    invInfo["X"] = container:getParent():getSquare():getX()
+                    invInfo["Y"] = container:getParent():getSquare():getY()
+                    invInfo["Z"] = container:getParent():getSquare():getZ()
+                else
+                    invInfo["type"] = "NormalContainer"
+                    invInfo["X"] = container:getParent():getSquare():getX()
+                    invInfo["Y"] = container:getParent():getSquare():getY()
+                    invInfo["Z"] = container:getParent():getSquare():getZ()
+                end
+            end
+
+            if valid then
+                table.insert(saveData, invInfo)
+            end
+
+        end
+    end
+end)
+
 Events.OnCreatePlayer.Add(function(playerIndex, player)
     loadFermentableItems(player:getInventory())
 end);
 
-Events.LoadGridsquare.Add(function(square)
+function ANL_LoadItemsFromGrid (square)
     if square == nil or not instanceof(square, "IsoGridSquare") then return end
 
     if square:getStaticMovingObjects() ~= nil and square:getStaticMovingObjects():size() > 0 then
@@ -140,28 +192,6 @@ Events.LoadGridsquare.Add(function(square)
             end
         end
     end
-
-    --if anl_cars_len ~= getCell():getVehicles():size() then
-    --    --anl_total5 = anl_total5 + 1; -- TODO: Убрать
-    --end
-    --for i1 = 0, getCell():getVehicles():size() - 1, 1 do
-    --    if anl_cars[i1] ~= getCell():getVehicles():get(i1) then
-    --        anl_cars = {}
-    --        for i2 = 0, getCell():getVehicles():size() - 1, 1 do
-    --            local vehicle = getCell():getVehicles():get(i2)
-    --            anl_cars[i2] = vehicle
-    --            for i3 = 0, vehicle:getPartCount() - 1, 1 do
-    --                local part = vehicle:getPartByIndex(i2)
-    --                if part ~= nil and part:getItemContainer() ~= nil then
-    --                    loadFermentableItems(part:getItemContainer())
-    --                    anl_total5 = anl_total5 + 1; -- TODO: Убрать
-    --                end
-    --            end
-    --        end
-    --        break
-    --    end
-    --end
-
     local vehicle = square:getVehicleContainer()
     if vehicle ~= nil then
         for i2 = 0, vehicle:getPartCount() - 1, 1 do
@@ -173,4 +203,30 @@ Events.LoadGridsquare.Add(function(square)
         end
     end
 
-end);
+end
+
+function ANL_LoadItemsFromVehicle(id)
+    local vehicle = getVehicleById(id)
+    if vehicle ~= nil then
+        for i2 = 0, vehicle:getPartCount() - 1, 1 do
+            local part = vehicle:getPartByIndex(i2)
+            if part ~= nil and part:getItemContainer() ~= nil then
+                loadFermentableItems(part:getItemContainer())
+                anl_total5 = anl_total5 + 1; -- TODO: Убрать
+            end
+        end
+    end
+end
+
+Events.OnLoad.Add(function()
+    local saveData = ModData.get("FermentationSaveData")
+    if not saveData then return end
+
+    for _, data in ipairs(saveData) do
+        if data["type"] and data["type"] == "WorldItem" or data["type"] == "StaticMovingObject" or data["type"] == "NormalContainer" then
+            ANL_LoadItemsFromGrid(getWorld():getCell():getGridSquare(data["X"], data["Y"], data["Z"]))
+        elseif data["type"] and data["type"] == "Vehicle" then
+            ANL_LoadItemsFromVehicle(data["id"])
+        end
+    end
+end)
