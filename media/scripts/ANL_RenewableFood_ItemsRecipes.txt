@@ -59,9 +59,9 @@ module ANL{
   item AnlRenewMag1 {
     Weight	=	0.1,
     Type	=	Literature,
-    DisplayName	=	All About Yeast,
+    DisplayName	=	Fermented World,
     Icon	=	MagazineFood,
-    TeachedRecipes  =   Grind Mushrooms To Yeast Base;Make Yeast,
+    TeachedRecipes  =   Grind Mushrooms To Yeast Base;Make Yeast;Ferment Berries;Make Vinegar,
     ReplaceOnUse    =   AnlRenewMag1,
     StaticModel = Magazine,
     WorldStaticModel = MagazineMetal1Ground,

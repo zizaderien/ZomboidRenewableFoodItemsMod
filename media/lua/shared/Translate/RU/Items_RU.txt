@@ -3,7 +3,7 @@ Items_RU = {
 
   DisplayName_Wild_Yeast_Base = "Дикая дрожжевая основа",
   DisplayName_Jar_of_Yeast = "Банка дрожжевой смеси",
-  DisplayName_Jar_of_Ready_Yeast = "Банка готовых дрожжей",
+  DisplayName_Jar_of_Ready_Yeast_(OBSOLETED) = "Банка готовых дрожжей (УСТАРЕВШЕЕ)",
   DisplayName_Fermented_World = "Журнал «Бродим вместе»",
   
   DisplayName_Sugar_Beet = "Сахарная свекла",

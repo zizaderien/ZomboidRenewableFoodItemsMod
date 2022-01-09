@@ -9,4 +9,9 @@ Recipe_RU = {
   Recipe_Put_Sugar_Beet_Seeds_in_Packet = "Сложить семена сахарной свеклы",
   Recipe_Slice_Sugar_Beets = "Нарезать сахарную свеклу",
   Recipe_Make_Sugar = "Сделать сахар",
+  
+  Recipe_Crush_Berries = "Перетереть ягоды",
+  Recipe_Ferment_Berries = "Подготовить ягоды к брожению",
+  
+  Recipe_Make_Vinegar = "Сделать уксус",
 }
