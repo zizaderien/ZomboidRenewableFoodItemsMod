@@ -37,6 +37,7 @@ function Recipe.OnCreate.OpenYeastJar (items, result, player)
   inv:AddItem("Base.EmptyJar");	
   inv:AddItem("Base.JarLid");	
 end function Recipe.OnCreate.ANLOpenJar (items, result, player)
+function Recipe.OnCreate.ANLOpenJar (items, result, player)
   local inv = player:getInventory();
   inv:AddItem("Base.EmptyJar");
   inv:AddItem("Base.JarLid");
