@@ -1,16 +1,22 @@
 Items_RU = {
-  DisplayName_Small_Salt_Rock = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ",
+  DisplayName_Small_Salt_Rock = "Соляная галька",
 
-  DisplayName_Wild_Yeast_Base = "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ",
-  DisplayName_Jar_of_Yeast = "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ",
-  DisplayName_Jar_of_Ready_Yeast_(OBSOLETED) = "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)",
-  DisplayName_Fermented_World = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ",
-
-  DisplayName_Sugar_Beet = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ",
-  DisplayName_Sugar_Beet_Seeds = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ",
-  DisplayName_Sugar_Beet_Seeds_Packet = "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ",
-  DisplayName_Sliced_Sugar_Beets = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ",
-  DisplayName_Dried_Sugar_Beets = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ",
-  DisplayName_Handmade_Sugar = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ",
-
+  DisplayName_Wild_Yeast_Base = "Дикая дрожжевая основа",
+  DisplayName_Jar_of_Yeast = "Банка дрожжевой смеси",
+  DisplayName_Jar_of_Ready_Yeast = "Банка готовых дрожжей",
+  DisplayName_Fermented_World = "Журнал «Бродим вместе»",
+  
+  DisplayName_Sugar_Beet = "Сахарная свекла",
+  DisplayName_Sugar_Beet_Seeds = "Семена сахарной свеклы",
+  DisplayName_Sugar_Beet_Seeds_Packet = "Пачка семян сахарной свеклы",
+  DisplayName_Sliced_Sugar_Beets = "Измельченная сахарная свекла",
+  DisplayName_Dried_Sugar_Beets = "Высушенная сахарная свекла",
+  DisplayName_Handmade_Sugar = "Журнал «Домашний сахар - сделай сам»",
+  
+  DisplayName_Wild_Berry_Wine = "Ягодное вино",
+  DisplayName_Grated_Berries = "Перетертые ягоды",
+  DisplayName_Jar_Of_Fermented_Berries = "Банка перебродивших ягод",
+  DisplayName_Jar_Of_Crushed_Berries = "Банка перетертых ягод",
+  
+  DisplayName_Jar_Of_Vinegar_Base = "Банка с уксусной основой",
 }
