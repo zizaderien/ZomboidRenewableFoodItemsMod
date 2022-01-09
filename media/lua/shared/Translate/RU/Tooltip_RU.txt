@@ -1,0 +1,4 @@
+Tooltip_RU = {
+	Tooltip_ANL_fermentation = "Брожение",
+	Tooltip_ANL_fermentationFinished = "завершено",
+}

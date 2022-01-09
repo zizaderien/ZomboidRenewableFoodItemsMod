@@ -36,4 +36,28 @@ function Recipe.OnCreate.OpenYeastJar (items, result, player)
   local inv = player:getInventory();	
   inv:AddItem("Base.EmptyJar");	
   inv:AddItem("Base.JarLid");	
-end 
+end function Recipe.OnCreate.ANLOpenJar (items, result, player)
+  local inv = player:getInventory();
+  inv:AddItem("Base.EmptyJar");
+  inv:AddItem("Base.JarLid");
+end
+
+function Recipe.OnCreate.ANLOpenLid (items, result, player)
+  local inv = player:getInventory();
+  inv:AddItem("Base.JarLid");
+end
+
+function Recipe.OnCreate.ANLReturnJar (items, result, player)
+  local inv = player:getInventory();
+  inv:AddItem("Base.EmptyJar");
+end
+
+function Recipe.OnCreate.StartFermentation (items, result, player)
+  if not result:getModData().daysToFerment or not result:getModData().onFermentationFinish then
+      print("ERROR: Invalid item")
+      result:getContainer():DoRemoveItem(item);
+      return
+  end
+  result:getModData().isFermentable = 1;
+  result:getModData().fermentationStart = getGameTime():getWorldAgeHours();
+end
