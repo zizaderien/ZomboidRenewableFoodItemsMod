@@ -1,2 +1,2 @@
 # ZomboidRenewableFoodItemsMod
-Translation files in media/lua/shared/Translation
+Translation files in media/lua/shared/Translate
