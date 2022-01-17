@@ -1,0 +1,3 @@
+ContextMenu_PTBR = {
+	ContextMenu_ANL_OnEndFermentation = "Extrair Conteúdo",
+}

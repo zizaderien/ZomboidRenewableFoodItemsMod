@@ -1,0 +1,21 @@
+Recipe_PTBR = {
+  Recipe_Crush_Small_Salt_Rocks = "Triturar Pedras de Sal Pequena",
+  
+  Recipe_Grind_Mushrooms_To_Yeast_Base = "Moer Cogumelos à Base de Levedura",
+  Recipe_Make_Yeast = "Criar Levedura",
+  Recipe_Open_Yeast_Jar = "Abrir Pote de Levedura",
+  
+  Recipe_Open_Packet_of_Sugar_Beet_Seeds = "Abrir Pacote de Sementes de Beterraba",
+  Recipe_Put_Sugar_Beet_Seeds_in_Packet = "Colocar Sementes de Beterraba no Pacote",
+  Recipe_Slice_Sugar_Beets = "Fatiar Beterraba",
+  Recipe_Make_Sugar = "Produzir Açúcar",
+
+  Recipe_Crush_Berries = "Esmagar Bagas",
+  Recipe_Ferment_Berries = "Fermentar Bagas",
+  Recipe_Make_Vinegar = "Produzir Vinagre",
+
+
+
+
+
+}
