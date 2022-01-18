@@ -1,0 +1,4 @@
+Tooltip_PTBR = {
+	Tooltip_ANL_fermentation = "Fermentação",
+	Tooltip_ANL_fermentationFinished = "Finalizado",
+}

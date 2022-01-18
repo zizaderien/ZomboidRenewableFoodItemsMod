@@ -1,0 +1,21 @@
+﻿Items_PTBR = {
+  DisplayName_Small_Salt_Rock = "Pedra de Sal Pequena",
+  DisplayName_Wild_Yeast_Base = "Base de Levedura Selvagem",
+  DisplayName_Jar_of_Yeast = "Pote de Levedura",
+  DisplayName_Jar_of_Ready_Yeast_(OBSOLETED) = "Pote de Levedura",
+  DisplayName_Fermented_World = "Mundo Fermentado",
+  
+  DisplayName_Sugar_Beet = "Beterraba",
+  DisplayName_Sugar_Beet_Seeds = "Sementes de Beterraba",
+  DisplayName_Sugar_Beet_Seeds_Packet = "Pacote de Sementes de Beterraba",
+  DisplayName_Sliced_Sugar_Beets = "Fatias de Beterraba",
+  DisplayName_Dried_Sugar_Beets = "Beterrabas Seca",
+  DisplayName_Handmade_Sugar = "Açúcar Caseiro",
+
+  DisplayName_Grated_Berries = "Bagas Raladas",
+  DisplayName_Jar_Of_Crushed_Berries = "Pote de Bagas Esmagadas",
+  DisplayName_Jar_Wild_Berry_Wine = "Pote de Vinho de Bagas Silvestres",
+  DisplayName_Jar_Of_Vinegar_Base = "Pote de Base de Vinagre",
+
+
+}
