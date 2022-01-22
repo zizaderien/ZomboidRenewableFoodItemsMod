@@ -1,0 +1,21 @@
+﻿Recipe_CN = {
+  Recipe_Crush_Small_Salt_Rocks = "磨碎盐岩",
+  
+  Recipe_Grind_Mushrooms_To_Yeast_Base = "将蘑菇磨成酵母底",
+  Recipe_Make_Yeast = "制作酵母",
+  Recipe_Open_Yeast Jar = "打开酵母罐",
+  
+  Recipe_Open_Packet_of_Sugar_Beet_Seeds = "打开甜菜种子袋",
+  Recipe_Put_Sugar_Beet_Seeds_in_Packet = "将甜菜种子放入袋中",
+  Recipe_Slice_Sugar_Beets = "将甜菜切块",
+  Recipe_Make_Sugar = "制作砂糖",
+
+  Recipe_Crush_Berries = "磨碎浆果",
+  Recipe_Ferment_Berries = "发酵浆果",
+  Recipe_Make_Vinegar = "制作醋",
+
+
+
+
+
+}
