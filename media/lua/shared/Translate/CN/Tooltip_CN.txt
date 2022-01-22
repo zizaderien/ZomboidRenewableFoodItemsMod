@@ -1,0 +1,4 @@
+Tooltip_EN = {
+	Tooltip_ANL_fermentation = "发酵",
+	Tooltip_ANL_fermentationFinished = "完成",
+}
