@@ -8,13 +8,13 @@
   DisplayName_Sugar_Beet = "甜菜",
   DisplayName_Sugar_Beet_Seeds = "甜菜种子",
   DisplayName_Sugar_Beet_Seeds_Packet = "甜菜种子袋",
-  DisplayName_Sliced_Sugar_Beets = "甜菜切片,
+  DisplayName_Sliced_Sugar_Beets = "甜菜切片",
   DisplayName_Dried_Sugar_Beets = "干甜菜根",
   DisplayName_Handmade_Sugar = "自制砂糖",
 
   DisplayName_Grated_Berries = "磨碎的浆果",
   DisplayName_Jar_Of_Crushed_Berries = "一罐浆果泥",
-  DisplayName_Jar_Wild_Berry_Wine = "野莓酒",
+  DisplayName_Wild_Berry_Wine = "野莓酒",
   DisplayName_Jar_Of_Vinegar_Base = "一罐醋底",
 
 
