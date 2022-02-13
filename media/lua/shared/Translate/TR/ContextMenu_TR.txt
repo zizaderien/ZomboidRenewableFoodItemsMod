@@ -1,3 +1,3 @@
 ContextMenu_TR = {
-	ContextMenu_ANL_OnEndFermentation = "Ýçerikleri Çýkar",
+	ContextMenu_ANL_OnEndFermentation = "IÃ§erikleri Ã‡ikar",
 }
