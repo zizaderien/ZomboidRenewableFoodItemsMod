@@ -1,0 +1,4 @@
+Tooltip_TR = {
+	Tooltip_ANL_fermentation = "Mayala",
+	Tooltip_ANL_fermentationFinished = "Mayalama Bitti",
+}
